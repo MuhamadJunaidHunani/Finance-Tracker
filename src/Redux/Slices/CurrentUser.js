@@ -1,11 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
+
 const initialState = {
-    currentUserLoading: false,
-    currentUser: null,
-  }
+  currentUserLoading: false,
+  currentUser: null,
+};
+
 const currentUserSlice = createSlice({
-  name: 'currentUser',
-  initialState:initialState ,
+  name: "currentUser",
+  initialState: initialState,
   reducers: {
     setCurrentUser: (state, action) => {
       state.currentUser = action.payload;
@@ -21,5 +23,6 @@ const currentUserSlice = createSlice({
   },
 });
 
-export const { setCurrentUser, clearCurrentUser, toggleCurrentUserLoading } = currentUserSlice.actions;
+export const { setCurrentUser, clearCurrentUser, toggleCurrentUserLoading } =
+  currentUserSlice.actions;
 export default currentUserSlice.reducer;
