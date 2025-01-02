@@ -16,6 +16,7 @@ const router = createBrowserRouter([
   { path: '/', element: <PrivateRoutes element={<Home />} />},
 ]);
 
+
 function App() {
   return (
     <AuthProvider>
