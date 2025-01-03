@@ -19,12 +19,10 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <AuthProvider>
-      <UserProvider>
+    <>
         <RouterProvider router={router} />
         <ToastContainer />
-      </UserProvider>
-    </AuthProvider>
+    </>
   );
 }
 

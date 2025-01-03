@@ -25,4 +25,5 @@ const currentUserSlice = createSlice({
 
 export const { setCurrentUser, clearCurrentUser, toggleCurrentUserLoading } =
   currentUserSlice.actions;
-export default currentUserSlice.reducer;
+  const currentUserReducer =currentUserSlice.reducer;
+export default currentUserReducer ;

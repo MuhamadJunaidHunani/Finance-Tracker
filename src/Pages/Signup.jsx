@@ -1,111 +1,95 @@
-import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { Link } from 'react-router-dom';
-import { addUserToFirestore } from '../Firebase/AddUserToFirestore';
-import { CiCamera } from "react-icons/ci";
-import uploadToCloudinary from '../Utils/UploadToCloudinary';
-import { toast } from 'react-toastify';
-import { updateProfile } from 'firebase/auth';
+import React, { useState } from "react";
+import Joi from "joi";
+import axios from "axios";
+import register from "../Apis/Auth/Register";
+import { toast } from "react-toastify";
+import InputField from "../Components/UI/InputField";
+import CustomDropdown from "../Components/UI/CustomDropdown";
+import validate from "../Utils/Validate";
 
 
-function Signup() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [selectedImage, setSelectedImage] = useState(null);
-  const defaultProfilePic = 'https://res.cloudinary.com/duaxitxph/image/upload/v1730489678/fvnlm4dqusnv4il9ee00.webp';
 
-  const { signup } = useAuth();
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    setSelectedImage(file);
+const SignupForm = () => {
+  const [data, setData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    purpose: "",
+  });
+
+  const [errors, setErrors] = useState({});
+  const schema = Joi.object({
+    username: Joi.string().min(3).required().label("Username"),
+    email: Joi.string().email({ tlds: { allow: false } }).required().label("Email"),
+    password: Joi.string().min(6).required().label("Password"),
+    purpose: Joi.string().required().label("Purpose"),
+  });
+
+  const handleChange = ({ target: input }) => {
+    const newData = { ...data };
+    newData[input.name] = input.value;
+    setData(newData);
   };
 
-  const handleSignup = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if(!name , !email , !password){
-        return toast.error('all Inputs should be filled')
-      }
-      const { user } = await signup(email, password);
-      const profileImage = selectedImage? await uploadToCloudinary(selectedImage):defaultProfilePic;
-      await updateProfile(user, {
-        displayName: name,
-        photoURL: profileImage
-    });
-      await addUserToFirestore(user.uid, { email, password , name , profileImage });
+
+      const validationErrors = validate(data, schema);
+      setErrors(validationErrors || {});
+      if (validationErrors) return;
+      await register(data);
+      toast.success("Regiester succesfully")
     } catch (error) {
-      return toast.error("Failed to sign up", error);
+      toast.error(error)
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-      <div className="w-full max-w-md p-8 space-y-6 rounded-lg shadow-lg bg-gray-800">
-        <div className='flex justify-between items-center '>
-
-          <h2 className="text-3xl font-semibold text-center">Sign Up</h2>
-          <div className="flex gap-2 items-center relative">
-            <label className="flex w-[80px] h-[80px] justify-center items-center border-2 border-dashed border-gray-300 rounded-lg p-3 cursor-pointer hover:bg-gray-100 transition duration-300">
-              <span className="text-gray-700 text-center text-[30px]"><CiCamera /></span>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageChange}
-                className="hidden"
-              />
-            </label>
-
-            {selectedImage && (
-              <div className="absolute left-[2px] pointer-events-none">
-                <img
-                  src={URL.createObjectURL(selectedImage)}
-                  alt="Selected"
-                  className="w-[75px] h-[75px] object-cover rounded-md"
-                />
-              </div>
-            )}
-          </div>
-        </div>
-        <form onSubmit={handleSignup} className="space-y-4">
-          <div className='flex gap-5'>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-3 rounded-md bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="text"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full p-3 rounded-md bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-3 rounded-md bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-
-          <button
-            type="submit"
-            className="w-full p-3 mt-4 font-semibold text-white rounded-md bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Sign Up
-          </button>
-        </form>
-        <p className="text-gray-400 mt-4 text-center">
-          Already have an account? <Link to="/login" className="text-blue-500 hover:underline">Login</Link>
-        </p>
-      </div>
+    <div className="max-w-md mx-auto mt-10 bg-white p-6 shadow-lg rounded-lg">
+      <h2 className="text-2xl font-bold text-center mb-6">Sign Up</h2>
+      <form onSubmit={handleSubmit}>
+        <InputField
+          label="Username"
+          type="text"
+          name="username"
+          value={data.username}
+          onChange={handleChange}
+          error={errors.username}
+        />
+        <InputField
+          label="Email"
+          type="email"
+          name="email"
+          value={data.email}
+          onChange={handleChange}
+          error={errors.email}
+        />
+        <InputField
+          label="Password"
+          type="password"
+          name="password"
+          value={data.password}
+          onChange={handleChange}
+          error={errors.password}
+        />
+        <CustomDropdown
+          label="Purpose"
+          name="purpose"
+          options={["Personal", "Business"]}
+          value={data.purpose}
+          onChange={handleChange}
+          error={errors.purpose}
+        />
+        <button
+          type="submit"
+          className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          Register
+        </button>
+      </form>
     </div>
   );
-}
+};
 
-export default Signup;
+export default SignupForm;
