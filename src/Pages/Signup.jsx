@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import InputField from "../Components/UI/InputField";
 import CustomDropdown from "../Components/UI/CustomDropdown";
 import validate from "../Utils/Validate";
+import Loader from "../Components/UI/Loader";
 
 
 
@@ -49,6 +50,7 @@ const SignupForm = () => {
     <div className="max-w-md mx-auto mt-10 bg-white p-6 shadow-lg rounded-lg">
       <h2 className="text-2xl font-bold text-center mb-6">Sign Up</h2>
       <form onSubmit={handleSubmit}>
+        <Loader/> 
         <InputField
           label="Username"
           type="text"
