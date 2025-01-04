@@ -15,6 +15,7 @@ const Loader = () => {
         <div className="w-[100%] h-full bg-red-400 moving-line"></div>
       </div>
     </div>
+    
   )
 }
 
