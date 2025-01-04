@@ -13,6 +13,7 @@ const Loader = () => {
             loop={true}
             style={{ width: 60, height: 60 }}
           />
+          
           <p className='text-[21px] text-[#303030] font-semibold'><span className=''>C</span>oin Craft</p>
         </div>
         <div className="w-[200px] h-[2px] bg-[#e4e4e4] overflow-hidden relative">
