@@ -8,7 +8,6 @@ const Loader = () => {
     <div className="fixed top-0 left-0 h-screen w-screen flex items-center justify-center bg-[#F7F5F3]">
       <div className='flex flex-col items-center justify-center'>
         <div className="flex justify-center items-center gap-2">
-
           <Lottie
             animationData={loaderAnimation}
             loop={true}
