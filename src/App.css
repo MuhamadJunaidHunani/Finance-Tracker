@@ -1,22 +1,40 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 .moving-line {
   animation: moveLine 2s ease-in-out infinite;
 }
 
 @keyframes moveLine {
-  0%{
+  0% {
     transform: translateX(-70%);
   }
   50% {
     transform: translateX(70%);
   }
- 100% {
+  100% {
     transform: translateX(-70%);
   }
+}
+
+.custom-text-border {
+  text-shadow: 
+    4px 4px 0 #3d4e92,
+    -4px 4px 0 #3d4e92,
+    4px -4px 0 #3d4e92,
+    -4px -4px 0 #3d4e92,
+    0 4px 0 #3d4e92,
+    0 -4px 0 #3d4e92,
+    -4px 0 0 #3d4e92,
+    4px 0 0 #3d4e92,
+    0px 0px 0 #3d4e92,
+    -0px 0px 0 #3d4e92,
+    0px -0px 0 #3d4e92,
+    -0px -0px 0 #3d4e92,
+    0 0px 0 #3d4e92,
+    0 -0px 0 #3d4e92,
+    -0px 0 0 #3d4e92,
+    0px 0 0 #3d4e92 !important;
+    letter-spacing:3px ;
+}
+
+.circle-gradient {
+  background: radial-gradient(circle, #86aeff 10% , #2E76BE 60%);
 }
