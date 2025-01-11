@@ -5,8 +5,8 @@ import { MdStart } from 'react-icons/md'
 const CustomButton = ({text}) => {
   return (
     <div className="relative scale-75 cursor-pointer">
-    <div className="relative h-[50px] gap-2 flex items-center bg-[#d1ddff] rounded-[30px] transform active:translate-y-[3px] active:translate-x-[3px]">
-        <div className="flex items-center justify-center border-[4px] border-[#afbff3] w-[80px] h-full bg-[#495eb3] rounded-[30px] text-white">
+    <div className="relative h-[50px] gap-2 flex items-center bg-secondaryC rounded-[30px] transform active:translate-y-[3px] active:translate-x-[3px]">
+        <div className="flex items-center justify-center border-[4px] border-[#afbff3] w-[80px] h-full bg-primaryC rounded-[30px] text-backgroundC">
             {/* <IoIosUnlock className="text-[30px]" /> */}
             <MdStart className="text-[30px]" />
         </div>

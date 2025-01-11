@@ -29,6 +29,14 @@ body {
   }
 }
 
+:root {
+  --primary-color: #4951c4;      /* Purple */
+  --secondary-color: #d2deff;    /* Light purple */
+  --accent-color: #FF5733;       /* Red */
+  --background-color: #ffffff;   /* Light grey */
+  --text-color: #7b8c9d;         /* Dark grey */
+}
+
 
 @tailwind base;
 @tailwind components;
