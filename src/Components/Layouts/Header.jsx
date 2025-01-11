@@ -11,9 +11,9 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-white h-[72px] sticky top-0 shadow-md z-50">
+        <header className="bg-transparent h-[72px] sticky top-0 z-50">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                <div className="text-3xl font-sans font-bold text-[#495eb3]">COIN CRAFT</div>
+                <div className="text-3xl font-sans font-bold text-[#4D6BE5]">COIN CRAFT</div>
 
                 <nav className="hidden md:flex space-x-6">
                     <a href="#home" className="text-gray-700 hover:text-[#C41F3E]">

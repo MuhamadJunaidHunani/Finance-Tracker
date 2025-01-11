@@ -5,9 +5,10 @@ import Header from '../Components/Layouts/Header'
 
 const Home = () => {
   return (
-    <div>
+    <div  className="homeBg">
       <Header/>
       <Hero/>
+      {/* <Loader/> */}
     </div>
   )
 }

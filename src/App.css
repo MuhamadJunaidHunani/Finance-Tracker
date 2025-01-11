@@ -6,16 +6,18 @@
   0% {
     transform: translateX(-70%);
   }
+
   50% {
     transform: translateX(70%);
   }
+
   100% {
     transform: translateX(-70%);
   }
 }
 
 .custom-text-border {
-  text-shadow: 
+  text-shadow:
     4px 4px 0 #3d4e92,
     -4px 4px 0 #3d4e92,
     4px -4px 0 #3d4e92,
@@ -32,9 +34,15 @@
     0 -0px 0 #3d4e92,
     -0px 0 0 #3d4e92,
     0px 0 0 #3d4e92 !important;
-    letter-spacing:3px ;
+  letter-spacing: 3px;
 }
 
 .circle-gradient {
-  background: radial-gradient(circle, #86aeff 10% , #2E76BE 60%);
+  background: radial-gradient(circle, #86aeff 10%, #2E76BE 60%);
+}
+
+.homeBg {
+  background: url(https://a.storyblok.com/f/159312/147x826/725e1c9c6f/homepage-texture.png), linear-gradient(rgb(204, 208, 239) 0%, rgb(238, 242, 234) 100%);
+  background-blend-mode: overlay;
+  background-attachment: fixed;
 }

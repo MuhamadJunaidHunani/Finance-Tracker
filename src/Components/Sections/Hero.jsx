@@ -4,7 +4,7 @@ import CustomButton from '../UI/CustomButton';
 
 const Hero = () => {
   return (
-    <div className="bg-[#2E76BE] w-full h-[calc(100vh_-_72px)] max-h-[1000px] mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6">
+    <div className="bg-[transparent] w-full h-[calc(100vh_-_72px)] max-h-[1000px] mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6">
       <div className="text-center md:text-left space-y-4">
         <h1 className="text-[70px] md:text-[70px] font-bold custom-text-border leading-[80px] text-[white]">
           Welcome to <br/>Our Platform
@@ -20,7 +20,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-full circle-gradient h-full flex justify-center items-center md:w-1/2">
+      <div className="w-full  h-full flex justify-center items-center md:w-1/2">
         <img
           src={heroImage}
           alt="Hero"
