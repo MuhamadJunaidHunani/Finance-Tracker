@@ -18,22 +18,22 @@
 
 .custom-text-border {
   text-shadow:
-    4px 4px 0 #3d4e92,
-    -4px 4px 0 #3d4e92,
-    4px -4px 0 #3d4e92,
-    -4px -4px 0 #3d4e92,
-    0 4px 0 #3d4e92,
-    0 -4px 0 #3d4e92,
-    -4px 0 0 #3d4e92,
-    4px 0 0 #3d4e92,
-    0px 0px 0 #3d4e92,
-    -0px 0px 0 #3d4e92,
-    0px -0px 0 #3d4e92,
-    -0px -0px 0 #3d4e92,
-    0 0px 0 #3d4e92,
-    0 -0px 0 #3d4e92,
-    -0px 0 0 #3d4e92,
-    0px 0 0 #3d4e92 !important;
+    2px 2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px -2px 0 #fff,
+    0 2px 0 #fff,
+    0 -2px 0 #fff,
+    -2px 0 0 #fff,
+    2px 0 0 #fff,
+    0px 0px 0 #fff,
+    -0px 0px 0 #fff,
+    0px -0px 0 #fff,
+    -0px -0px 0 #fff,
+    0 0px 0 #fff,
+    0 -0px 0 #fff,
+    -0px 0 0 #fff,
+    0px 0 0 #fff !important;
   letter-spacing: 3px;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .homeBg {
-  background: url(https://a.storyblok.com/f/159312/147x826/725e1c9c6f/homepage-texture.png), linear-gradient(rgb(204, 208, 239) 0%, rgb(238, 242, 234) 100%);
+  background: url(https://a.storyblok.com/f/159312/147x826/725e1c9c6f/homepage-texture.png), linear-gradient( #c5d4ff 0%, rgb(238, 242, 234) 100%);
   background-blend-mode: overlay;
   background-attachment: fixed;
 }
