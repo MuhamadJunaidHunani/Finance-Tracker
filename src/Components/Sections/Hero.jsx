@@ -1,6 +1,7 @@
 import React from 'react';
 import heroImage from "../../assets/images/heroImage.png";
 import CustomButton from '../UI/CustomButton';
+import { CustomToast } from '../UI/CustomToast';
 
 const Hero = () => {
   return (
@@ -14,10 +15,11 @@ const Hero = () => {
         </p>
         <div className="space-x-4 flex">
           <CustomButton text={'STARTED'} />
-          <a href="#" class="inline-flex items-center space-x-2 text-primaryC">
+          {/* <CustomToast text={"hello"} type={"success"} /> */}
+          <a href="#" className="inline-flex items-center space-x-2 text-primaryC">
             <span>Learn More</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-all duration-300 group-hover:scale-x-150" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"></path>
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 transition-all duration-300 group-hover:scale-x-150" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </a>
 

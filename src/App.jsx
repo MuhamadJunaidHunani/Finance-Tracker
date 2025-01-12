@@ -4,9 +4,8 @@ import { createBrowserRouter,  RouterProvider } from 'react-router-dom';
 import Signup from './Pages/Signup';
 import PublicRoutes from './AuthRouting/PublicRoutes';
 import PrivateRoutes from './AuthRouting/PrivateRoutes';
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
 import Home from './Pages/Home';
+import { ToastProvider } from './Components/UI/CustomToast';
 
 const router = createBrowserRouter([
   // { path: '/login', element: <PublicRoutes element={<Login />} /> },
@@ -18,8 +17,10 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
+        <ToastProvider>
         <RouterProvider router={router} />
-        <ToastContainer />
+
+        </ToastProvider>
     </>
   );
 }

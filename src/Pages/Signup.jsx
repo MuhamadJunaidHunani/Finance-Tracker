@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Joi from "joi";
 import axios from "axios";
 import register from "../Apis/Auth/Register";
-import { toast } from "react-toastify";
 import InputField from "../Components/UI/InputField";
 import CustomDropdown from "../Components/UI/CustomDropdown";
 import validate from "../Utils/Validate";
