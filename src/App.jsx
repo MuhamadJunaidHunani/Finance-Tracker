@@ -1,5 +1,5 @@
 import './App.css';
-import { createBrowserRouter,  RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 // import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import PublicRoutes from './AuthRouting/PublicRoutes';
@@ -10,16 +10,15 @@ import { ToastProvider } from './Components/UI/CustomToast';
 const router = createBrowserRouter([
   // { path: '/login', element: <PublicRoutes element={<Login />} /> },
   { path: '/signup', element: <PublicRoutes element={<Signup />} /> },
-  { path: '/', element: <PrivateRoutes element={<Home />} />},
+  { path: '/', element: <PrivateRoutes element={<Home />} /> },
 ]);
 
 
 function App() {
   return (
     <>
-        <ToastProvider>
-        <RouterProvider router={router} />
-        </ToastProvider>
+      <RouterProvider router={router} />
+      <ToastProvider />
     </>
   );
 }

@@ -10,6 +10,19 @@ export default {
         backgroundC: 'var(--background-color)',
         textC: 'var(--text-color)',
       },
+      animation: {
+        'fade-in-out': 'fade-in 0.3s ease-out, fade-out 0.3s ease-in 2s',
+      },
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        'fade-out': {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
+      }
     },
   },
   plugins: [],

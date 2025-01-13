@@ -1,14 +1,33 @@
 import { useState } from "react";
 
+let toastState = null;
+let toastListeners = [];
+
+const updateListeners = () => {
+  toastListeners.forEach((listener) => listener(toastState));
+};
+
 export const useToast = () => {
-  const [toast, setToast] = useState(null);
+  const [toast, setToast] = useState(toastState);
 
   const showToast = (text, type) => {
-    setToast({ text, type });
-    // console.log("heeloo" , type);
+    toastState = { text, type };
+    updateListeners();
 
-    // setTimeout(() => setToast(null), 2000);
+    setTimeout(() => {
+      toastState = null;
+      updateListeners();
+    }, 2000);
   };
 
-  return { toast, showToast, hideToast: () => setToast(null) };
+  const hideToast = () => {
+    toastState = null;
+    updateListeners();
+  };
+
+  if (!toastListeners.includes(setToast)) {
+    toastListeners.push(setToast);
+  }
+
+  return { toast, showToast, hideToast };
 };
