@@ -45,7 +45,6 @@ export const ToastProvider = ({ Children }) => {
         <>
         { Children }
         {
-            
             toast ? (
                 <CustomToast text={toast.text} type={toast.type} onClose={hideToast} />
             ) : null
