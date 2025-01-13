@@ -41,8 +41,6 @@ export const CustomToast = ({ text, type, onClose }) => {
 export const ToastProvider = ({ Children }) => {
     const { toast, showToast, hideToast } = useToast();
     console.log("helloo0000", toast);
-
-
     return (
         <>
         { Children }
