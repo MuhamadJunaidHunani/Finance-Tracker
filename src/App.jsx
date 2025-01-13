@@ -19,7 +19,6 @@ function App() {
     <>
         <ToastProvider>
         <RouterProvider router={router} />
-
         </ToastProvider>
     </>
   );
