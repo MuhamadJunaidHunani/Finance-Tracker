@@ -5,4 +5,5 @@ const ConverterIntro = () => {
     <div className='bg-primaryC h-[calc(100vh_-_72px)]'>ConverterIntro</div>
   )
 }
+
 export default ConverterIntro;
