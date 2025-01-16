@@ -10,7 +10,7 @@ const CustomButton = ({ text }) => {
           {/* <IoIosUnlock className="text-[30px]" /> */}
           <MdStart className="text-[30px]" />
         </div>
-        <span className="text-[495eb3] text-lg font-bold pr-[20px] select-none">{text}</span>
+        <span className="text-[#495eb3] text-lg font-bold pr-[20px] select-none">{text}</span>
       </div>
       <div className="absolute inset-0 rounded-[30px] bg-[#afbff3] z-[-100] transform translate-y-[4px] translate-x-[4px]"></div>
     </div>

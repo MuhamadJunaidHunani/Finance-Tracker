@@ -1,9 +1,21 @@
-import React, { useState } from "react";
-import { IoIosUnlock } from "react-icons/io";
+import React, { useEffect, useState } from "react";
 import CustomButton from "../UI/CustomButton";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { RxCross2 } from "react-icons/rx";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (document.body.getBoundingClientRect().top < -100) {
+                setIsScrolled(true)
+            } else {
+                setIsScrolled(false)
+            }
+        })
+    }, [])
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -11,16 +23,16 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-transparent h-[72px] sticky top-0 z-50">
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                <div className="text-3xl font-sans font-bold custom-text-border text-[#4951c4]">COIN CRAFT</div>
+        <header className={`bg-transparent h-[72px] transition-all duration-300 ease-in-out sticky top-0 z-50 ${window.location.pathname === "/" && !isScrolled && !isMenuOpen ? 'bg-transparent text-white' : 'bg-white text-black shadow-md '}`}>
+            <div className="px-4 py-4 flex justify-between items-center">
+                <div className="text-[18px] md:text-3xl font-sans font-bold custom-text-border text-[#4951c4]">COIN CRAFT</div>
 
                 <nav className="hidden md:flex space-x-6">
                     <a href="#home" className="text-gray-700 hover:text-[#C41F3E]">
                         Home
                     </a>
                     <a href="#about" className="text-gray-700 hover:text-[#C41F3E]">
-                        About                                                                                                                            
+                        About
                     </a>
                     <a href="#services" className="text-gray-700 hover:text-[#C41F3E]">
                         Services
@@ -30,34 +42,18 @@ const Header = () => {
                     </a>
                 </nav>
 
-                {/* Login Button */}
-               <CustomButton text={'LOGIN'}/>
+                <CustomButton text={'LOGIN'} />
 
 
-                {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-gray-700 focus:outline-none focus:text-[#C41F3E]"
+                    className="md:hidden text-[24px] text-gray-700 focus:outline-none focus:text-[#C41F3E]"
                     onClick={toggleMenu}
                     aria-label="Open Menu"
                 >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M4 6h16M4 12h16m-7 6h7"
-                        />
-                    </svg>
+                    <HiOutlineMenuAlt3 />
                 </button>
             </div>
 
-            {/* Mobile Drawer */}
             <div
                 className={`fixed inset-0 bg-white transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"
                     } transition-transform duration-300 ease-in-out z-40`}
@@ -65,24 +61,11 @@ const Header = () => {
                 <div className="flex justify-between items-center px-4 py-4">
                     <div className="text-2xl font-bold text-[#C41F3E]">Brand</div>
                     <button
-                        className="text-gray-700 focus:outline-none"
+                        className="text-gray-700 text-[24px] focus:outline-none"
                         onClick={toggleMenu}
                         aria-label="Close Menu"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        </svg>
+                    ><RxCross2 />
+
                     </button>
                 </div>
                 <nav className="mt-8 space-y-4 text-center">
