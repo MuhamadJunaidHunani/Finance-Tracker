@@ -25,7 +25,7 @@ const Header = () => {
     return (
         <header className={`bg-transparent h-[72px] transition-all duration-300 ease-in-out sticky top-0 z-50 ${window.location.pathname === "/" && !isScrolled && !isMenuOpen ? 'bg-transparent text-white' : 'bg-white text-black shadow-md '}`}>
             <div className="px-4 py-4 flex justify-between items-center">
-                <div className="text-[18px] md:text-3xl font-sans font-bold custom-text-border text-[#4951c4]">COIN CRAFT</div>
+                <div className="text-[24px] md:text-3xl font-sans font-bold custom-text-border text-[#4951c4]">COIN CRAFT</div>
 
                 <nav className="hidden md:flex space-x-6">
                     <a href="#home" className="text-gray-700 hover:text-[#C41F3E]">
@@ -42,16 +42,20 @@ const Header = () => {
                     </a>
                 </nav>
 
-                <CustomButton text={'LOGIN'} />
+                <div className="flex items-center gap-[15px]">
 
 
-                <button
-                    className="md:hidden text-[24px] text-gray-700 focus:outline-none focus:text-[#C41F3E]"
-                    onClick={toggleMenu}
-                    aria-label="Open Menu"
-                >
-                    <HiOutlineMenuAlt3 />
-                </button>
+                    <CustomButton text={'LOGIN'} className={"md:scale-100 scale-75"} />
+
+
+                    <button
+                        className="md:hidden text-[24px] text-gray-700 focus:outline-none focus:text-[#C41F3E]"
+                        onClick={toggleMenu}
+                        aria-label="Open Menu"
+                    >
+                        <HiOutlineMenuAlt3 />
+                    </button>
+                </div>
             </div>
 
             <div
