@@ -8,8 +8,7 @@ const PrivateRoutes = ({ element }) => {
 
   if (currentUserLoading) return <Loader />;
 
-  // return currentUser ? element : <Navigate to="/login" />;  
-  return currentUser ? element : element ;
+  return currentUser ? element : <Navigate to="/login" />;  
 };
 
 export default PrivateRoutes;

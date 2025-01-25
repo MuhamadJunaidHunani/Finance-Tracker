@@ -45,7 +45,7 @@ const Header = () => {
                 <div className="flex items-center gap-[15px]">
 
 
-                    <CustomButton text={'LOGIN'} className={"md:scale-100 scale-75"} />
+                    <CustomButton link={"/login"} text={'LOGIN'} className={"md:scale-100 scale-75"} />
 
 
                     <button

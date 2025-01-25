@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import BaseUrl from "../../../Config";
+import BaseUrl from "../../../config";
 
 const register = async (data) => {
   try {

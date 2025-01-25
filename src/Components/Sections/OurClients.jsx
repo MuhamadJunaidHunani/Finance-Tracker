@@ -32,11 +32,11 @@ const OurClients = () => {
 
     const duplicate = [...ourClients , ...ourClients]
     return (
-        <div className="h-[200px] bg-primaryC">
-            <div>
-                <div className='flex items-center gap-[50px] overflow-hidden'>
+        <div className="flex items-center h-[100px] bg-primaryC overflow-hidden">
+            <div >
+                <div className='flex h-full max-w-[100vw] items-center gap-[50px] overflow-hidden'>
                     {duplicate.map((client, i) => (
-                        <div className='min-w-[150px]'>
+                        <div key={i} className='min-w-[100px]'>
                             <img className='w-full h-auto' src={client.image} alt={client.name} />
                         </div>
                     ))}

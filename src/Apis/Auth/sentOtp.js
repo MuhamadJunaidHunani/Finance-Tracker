@@ -3,13 +3,12 @@
 import axios from "axios";
 import Base_URL from "../../../config";
 
-export const loginUser = async (data) => {
+export const SendOTP = async (data) => {
   try {
-    const apiUrl = `${Base_URL}/login`;
+    const apiUrl = `${Base_URL}/send-otp`;
     const response = await axios.post(apiUrl, data);
-    return response.data;
+    return response;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };

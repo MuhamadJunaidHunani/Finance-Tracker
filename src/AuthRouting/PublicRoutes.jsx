@@ -8,7 +8,7 @@ const PublicRoutes = ({ element }) => {
 
   if (currentUserLoading) return<Loader/>;
 
-  return !currentUser ? element : <Navigate to="/" replace />;
+  return !currentUser ? element : <Navigate to="/dashboard" replace />;
 };
 
 export default PublicRoutes;

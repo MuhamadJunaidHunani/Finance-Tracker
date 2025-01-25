@@ -13,7 +13,7 @@ const Hero = () => {
           Seamlessly manage and grow your finances with powerful tools and insights.
         </p>
         <div className="space-x-4 flex justify-start items-center !mt-[30px]">
-          <CustomButton text={'STARTED'} className={"origin-left"} />
+          <CustomButton link={"/register"} text={'STARTED'} className={"origin-left"} />
           <div>
             <a href="#" className="inline-flex items-center space-x-2 text-primaryC">
               <span>Learn More</span>

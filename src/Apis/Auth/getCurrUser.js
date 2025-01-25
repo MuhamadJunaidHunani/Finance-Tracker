@@ -1,5 +1,5 @@
 import axios from "axios";
-import BaseUrl from "../../../Config";
+import BaseUrl from "../../../config";
 
 export const getCurrentUser = async (token) => {
   if (!token) throw new Error("No token provided");
