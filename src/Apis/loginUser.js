@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import Base_URL from "../../../config";
+import Base_URL from "../config";
 
 export const loginUser = async (data) => {
   try {

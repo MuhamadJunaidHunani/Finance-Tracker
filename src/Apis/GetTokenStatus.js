@@ -1,5 +1,5 @@
 import axios from "axios";
-import BaseUrl from "../../config";
+import BaseUrl from "../config";
 
 export const GetTokenStatus = async (token) => {
   try {

@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getCurrentUser } from "../../Apis/Auth/getCurrUser";
+import { getCurrentUser } from "../../Apis/getCurrUser";
 
 const initialState = {
   currentUserLoading: false,
