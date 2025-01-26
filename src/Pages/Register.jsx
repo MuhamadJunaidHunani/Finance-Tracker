@@ -3,7 +3,7 @@ import Joi from "joi";
 import InputField from "../Components/UI/InputField";
 import validate from "../Utils/Validate";
 import Loader from "../Components/UI/Loader";
-import { SendOTP } from "../Apis/Auth/sentOtp";
+import { SendOTP } from "../Apis/sentOtp";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 

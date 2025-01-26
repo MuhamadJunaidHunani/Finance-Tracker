@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { verifyOtp } from "../Apis/Auth/verifyOTP";
+import { verifyOtp } from "../Apis/verifyOTP";
 import { fetchCurrentUser } from "../Redux/Slices/CurrentUser";
 import Loader from "../Components/UI/Loader";
 import { toast } from "react-toastify";
-import { SendOTP } from "../Apis/Auth/sentOtp";
+import { SendOTP } from "../Apis/sentOtp";
 import { useDispatch } from "react-redux";
 
 const OtpVerify = () => {

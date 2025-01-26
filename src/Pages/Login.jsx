@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { loginUser } from '../Apis/Auth/loginUser';
+import { loginUser } from '../Apis/loginUser';
 import { toast } from 'react-toastify';
 import Loader from '../Components/UI/Loader';
 import { fetchCurrentUser } from '../Redux/Slices/CurrentUser';
