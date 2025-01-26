@@ -4,11 +4,13 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
 import { clearCurrentUser } from "../../Redux/Slices/CurrentUser";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const AdminHeader = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (document.body.getBoundingClientRect().top < -40) {
@@ -46,7 +48,7 @@ const AdminHeader = () => {
 
                 <div className="flex items-center gap-[15px]">
                     <div >
-                        <CustomButton link={"/login"} text={'LOGOUT'} className={"md:scale-100 scale-75"} onClickF={() => { handleLogout }} />
+                        <CustomButton link={""} text={'LOGOUT'} className={"md:scale-100 scale-75"} otherFunc={handleLogout} />
                     </div>
 
 

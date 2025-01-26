@@ -14,6 +14,7 @@ import TrackToken from './Pages/TrackToken';
 import Graphs from './Pages/Admin/graphs';
 import StaffDashboard from './Pages/Staff/Dashboard';
 import ReceptionDashboard from './Pages/Reception/Dashboard';
+import Docs from './Pages/Docs';
 
 const router = createBrowserRouter([
   { path: '/login', element: <PublicRoutes element={<Login />} /> },
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
   { path: '/staff/dashboard', element: <PrivateRoutes element={<StaffDashboard />} /> },
   { path: '/reception/dashboard', element: <PrivateRoutes element={<ReceptionDashboard />} /> },
   { path: '/reception', element: <Home /> },
+  { path: '/docs', element: <Docs /> },
   { path: '/', element: <RedirectToReception /> },
 
 ]);

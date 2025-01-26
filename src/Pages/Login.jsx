@@ -6,6 +6,7 @@ import Loader from '../Components/UI/Loader';
 import { fetchCurrentUser } from '../Redux/Slices/CurrentUser';
 import InputField from '../Components/UI/InputField';
 import { useDispatch } from 'react-redux';
+import { FaArrowLeft } from 'react-icons/fa6';
 
 const Login = () => {
     const [data, setData] = useState({
@@ -31,7 +32,7 @@ const Login = () => {
         }
         try {
             setLoading(true)
-            const {token} = await loginUser(data);
+            const { token } = await loginUser(data);
             localStorage.setItem("authToken", token);
             console.log(token);
             dispatch(fetchCurrentUser())
@@ -48,7 +49,9 @@ const Login = () => {
 
     return (
         <div className="flex justify-center items-center h-screen bg-[#f1f1f1]">
-            <div className="max-w-md w-full mx-auto mt-10 bg-white p-6 shadow-lg rounded-lg">
+            <div className="relative max-w-md w-full mx-auto mt-10 bg-white p-6 shadow-lg rounded-lg">
+                <FaArrowLeft onClick={()=>{navigate("/reception")}} className='absolute left-5 top-7 cursor-pointer text-[24px]' />
+
                 <h2 className="text-2xl font-semibold text-black text-center mb-6">Login</h2>
                 <form onSubmit={handleLogin}>
                     <InputField

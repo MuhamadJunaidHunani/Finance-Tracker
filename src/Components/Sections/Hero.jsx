@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from "../../assets/images/HeroRecept.png";
+import heroImage from "../../assets/images/HeroRecept2.png";
 import CustomButton from '../UI/CustomButton';
 import ApplyToken from '../Forms/ApplyToken';
 
