@@ -78,7 +78,7 @@ const Header = () => {
         } transition-transform duration-300 ease-in-out z-40`}
       >
         <div className="flex justify-between items-center px-4 py-4">
-          <div className="text-2xl font-bold text-[#C41F3E]">Brand</div>
+          <div className="text-2xl font-bold text-primaryC">Quick Token</div>
           <button
             className="text-gray-700 text-[24px] focus:outline-none"
             onClick={toggleMenu}
