@@ -54,7 +54,7 @@ const Docs = () => {
               </h2>
               <p className="text-gray-600">
                 <span className="font-medium text-primaryC">Detail:</span>{" "}
-                I have build fully dynamic adminpanel with using graphs and charts
+                I have build fully dynamic adminpanel with using graphs and charts.
               </p>
             </div>
             <div
