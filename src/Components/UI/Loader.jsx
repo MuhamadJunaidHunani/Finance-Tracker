@@ -14,13 +14,13 @@ const Loader = () => {
             style={{ width: 60, height: 60 }}
           />
           
-          <p className='text-[21px] text-[#303030] font-semibold'><span className=''>C</span>oin Craft</p>
+          <p className='text-[21px] text-[#303030] font-semibold'>Quick Token</p>
         </div>
         <div className="w-[200px] h-[2px] bg-[#e4e4e4] overflow-hidden relative">
-          <div className="w-[100%] h-full bg-[#ff850aae] moving-line"></div>
+          <div className="w-[100%] h-full bg-primaryC moving-line"></div>
         </div>
         <div className="mt-[20px] flex gap-1">
-          <p className='text-[12px] text-[#959595]'>Your finance tracker</p>
+          <p className='text-[12px] text-[#959595]'>Your Token Tracker</p>
           <FiBarChart className='text-[#959595]'/>
         </div>
       </div>

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import CustomButton from "../UI/CustomButton";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
+import { clearCurrentUser } from "../../Redux/Slices/CurrentUser";
+import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const AdminHeader = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-
+    const navigate = useNavigate()
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (document.body.getBoundingClientRect().top < -40) {
@@ -22,6 +24,12 @@ const Header = () => {
         document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
     };
 
+    const handleLogout = () => {
+        localStorage.clear();
+        dispatch(clearCurrentUser())
+        navigate("/login")
+    }
+
     return (
         <header className={`bg-transparent h-[72px] transition-all duration-300 ease-in-out sticky top-0 z-50 ${window.location.pathname === "/" && !isScrolled && !isMenuOpen ? 'bg-transparent text-white' : 'bg-white text-black shadow-md '}`}>
             <div className="px-4 py-4 flex justify-between items-center">
@@ -32,14 +40,14 @@ const Header = () => {
                         Reception
                     </a>
                     <a href="/track-token" className="text-gray-700 hover:text-primaryC">
-                       Track Your Token 
+                        Track Your Token
                     </a>
                 </nav>
 
                 <div className="flex items-center gap-[15px]">
-
-
-                    <CustomButton link={"/login"} text={'LOGIN'} className={"md:scale-100 scale-75"} />
+                    <div >
+                        <CustomButton link={"/login"} text={'LOGOUT'} className={"md:scale-100 scale-75"} onClickF={() => { handleLogout }} />
+                    </div>
 
 
                     <button
@@ -81,11 +89,11 @@ const Header = () => {
                     >
                         Track Your Token
                     </a>
-                 
+
                 </nav>
             </div>
         </header>
     );
 };
 
-export default Header;
+export default AdminHeader;

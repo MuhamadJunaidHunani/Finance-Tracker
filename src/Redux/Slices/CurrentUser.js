@@ -10,12 +10,11 @@ const initialState = {
 export const fetchCurrentUser = createAsyncThunk(
   "currentUser/fetchCurrentUser",
   async (_, { rejectWithValue }) => {
-    console.log("hello world");
     
     const token = localStorage.getItem("authToken");
-
+    
     if (!token) return rejectWithValue("No token found");
-
+    
     try {
       const user = await getCurrentUser(token);
       return user;

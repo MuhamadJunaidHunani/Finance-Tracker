@@ -32,11 +32,11 @@ body {
 }
 
 :root {
-  --primary-color: #4951c4;      /* Purple */
-  --secondary-color: #d2deff;    /* Light purple */
+  --primary-color: #06A5A7;      /* Purple */
+  --secondary-color: #f7ffff;    /* Light purple */
   --accent-color: #FF5733;       /* Red */
   --background-color: #f5f8ff;   /* Light grey */
-  --text-color: #7b8c9d;         /* Dark grey */
+  --text-color: #497778;         /* Dark grey */
 }
 
 

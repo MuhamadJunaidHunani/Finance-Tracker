@@ -32,11 +32,9 @@ const Login = () => {
         try {
             setLoading(true)
             const {token} = await loginUser(data);
-            
             localStorage.setItem("authToken", token);
             console.log(token);
             dispatch(fetchCurrentUser())
-            navigate("/dashboard");
         } catch (error) {
             setLoading(false)
             toast.error(error.response ? error.response.data.message : error.message)
@@ -71,14 +69,11 @@ const Login = () => {
                     />
                     <button
                         type="submit"
-                        className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full bg-primaryC text-white py-2 px-4 rounded-lg hover:opacity-100 opacity-80  focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                         Login
                     </button>
                 </form>
-                <p className="text-gray-400 mt-4 text-center">
-                    Don't have an account? <Link to="/register" className="text-blue-500 hover:underline">Sign Up</Link>
-                </p>
             </div>
         </div>
     );
